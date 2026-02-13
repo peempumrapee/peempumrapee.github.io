@@ -13,7 +13,7 @@ gem "minima", "~> 2.5"
 
 # Explicitly update dependencies to fix security vulnerabilities
 gem "webrick", ">= 1.8.2"
-gem "rexml", ">= 3.3.9"
+gem "rexml", ">= 3.4.2"
 gem "google-protobuf", ">= 4.28.3", "< 4.29"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
