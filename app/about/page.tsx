@@ -4,11 +4,11 @@ export default function About() {
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
       <div className="max-w-2xl w-full">
-        <Link href="/" className="text-sm text-gray-500 hover:text-gray-700">
+        <Link href="/" className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
           &larr; Home
         </Link>
         <h1 className="mt-4 text-3xl font-bold">About</h1>
-        <p className="mt-6 text-gray-600">
+        <p className="mt-6 text-gray-600 dark:text-gray-400">
           Hi, I&apos;m Pumrapee Poomka. Welcome to my personal website.
         </p>
         <div className="mt-8">
@@ -19,7 +19,7 @@ export default function About() {
                 href="https://github.com/peempumrapee"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
+                className="text-blue-600 hover:underline dark:text-blue-400"
               >
                 GitHub
               </a>
@@ -29,7 +29,7 @@ export default function About() {
                 href="https://linkedin.com/in/peempumrapee"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
+                className="text-blue-600 hover:underline dark:text-blue-400"
               >
                 LinkedIn
               </a>
@@ -39,7 +39,7 @@ export default function About() {
                 href="https://twitter.com/peempumrapee"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
+                className="text-blue-600 hover:underline dark:text-blue-400"
               >
                 Twitter
               </a>
