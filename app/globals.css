@@ -2,43 +2,99 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Dark mode transition for smooth theme switching */
+/* ── Material Theme CSS Custom Properties ── */
+
+/* Material Lighter (light mode – default) */
+:root {
+  --color-bg: #FAFAFA;
+  --color-bg-surface: #F3F4F5;
+  --color-bg-elevated: #E7E7E8;
+  --color-bg-highlight: #E7E7E8;
+  --color-text-primary: #272727;
+  --color-text-secondary: #546E7A;
+  --color-text-muted: #94A7B0;
+  --color-text-faint: #AABFC9;
+  --color-accent: #00BCD4;
+  --color-link: #39ADB5;
+  --color-primary: #6182B8;
+  --color-keyword: #7C4DFF;
+  --color-border: #d3e1e8;
+  --color-error: #e53935;
+}
+
+/* Material Darker (dark mode) */
+.dark {
+  --color-bg: #212121;
+  --color-bg-surface: #2A2A2A;
+  --color-bg-elevated: #323232;
+  --color-bg-highlight: #3F3F3F;
+  --color-text-primary: #eeffff;
+  --color-text-secondary: #B0BEC5;
+  --color-text-muted: #727272;
+  --color-text-faint: #616161;
+  --color-accent: #FF9800;
+  --color-link: #80cbc4;
+  --color-primary: #82aaff;
+  --color-keyword: #c792ea;
+  --color-border: #292929;
+  --color-error: #ff5370;
+}
+
+/* ── Map CSS variables to Tailwind theme tokens ── */
+@theme {
+  --color-mat-bg: var(--color-bg);
+  --color-mat-surface: var(--color-bg-surface);
+  --color-mat-elevated: var(--color-bg-elevated);
+  --color-mat-highlight: var(--color-bg-highlight);
+  --color-mat-text: var(--color-text-primary);
+  --color-mat-text-secondary: var(--color-text-secondary);
+  --color-mat-text-muted: var(--color-text-muted);
+  --color-mat-text-faint: var(--color-text-faint);
+  --color-mat-accent: var(--color-accent);
+  --color-mat-link: var(--color-link);
+  --color-mat-primary: var(--color-primary);
+  --color-mat-keyword: var(--color-keyword);
+  --color-mat-border: var(--color-border);
+  --color-mat-error: var(--color-error);
+}
+
+/* ── Smooth theme transition ── */
 html {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Dark mode prose styles for markdown content */
-.dark .prose {
-  color: #d1d5db; /* gray-300 */
+/* ── Prose / Markdown styles using Material palette ── */
+.prose {
+  color: var(--color-text-secondary);
 }
-.dark .prose h1,
-.dark .prose h2,
-.dark .prose h3,
-.dark .prose h4,
-.dark .prose h5,
-.dark .prose h6 {
-  color: #f3f4f6; /* gray-100 */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: var(--color-text-primary);
 }
-.dark .prose a {
-  color: #60a5fa; /* blue-400 */
+.prose a {
+  color: var(--color-link);
 }
-.dark .prose strong {
-  color: #f3f4f6; /* gray-100 */
+.prose strong {
+  color: var(--color-text-primary);
 }
-.dark .prose code {
-  color: #f3f4f6; /* gray-100 */
-  background-color: #374151; /* gray-700 */
+.prose code {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-elevated);
 }
-.dark .prose pre {
-  background-color: #1f2937; /* gray-800 */
+.prose pre {
+  background-color: var(--color-bg-surface);
 }
-.dark .prose blockquote {
-  color: #9ca3af; /* gray-400 */
-  border-left-color: #4b5563; /* gray-600 */
+.prose blockquote {
+  color: var(--color-text-muted);
+  border-left-color: var(--color-border);
 }
-.dark .prose hr {
-  border-color: #374151; /* gray-700 */
+.prose hr {
+  border-color: var(--color-border);
 }
-.dark .prose li::marker {
-  color: #9ca3af; /* gray-400 */
+.prose li::marker {
+  color: var(--color-text-muted);
 }
