@@ -25,7 +25,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100"
+        className="bg-mat-bg text-mat-text"
         style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }}
       >
         <div className="fixed top-4 right-4 z-50">
