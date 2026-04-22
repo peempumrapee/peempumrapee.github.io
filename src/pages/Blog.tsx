@@ -1,13 +1,13 @@
-import Link from "next/link";
-import { getAllPosts } from "@/lib/posts";
+import { Link } from 'react-router-dom'
+import { getAllPosts } from '@/lib/posts'
+
+const posts = getAllPosts()
 
 export default function Blog() {
-  const posts = getAllPosts();
-
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
       <div className="max-w-2xl w-full">
-        <Link href="/" className="text-sm text-mat-text-muted hover:text-mat-text-secondary">
+        <Link to="/" className="text-sm text-mat-text-muted hover:text-mat-text-secondary">
           &larr; Home
         </Link>
         <h1 className="mt-4 text-3xl font-bold">Blog</h1>
@@ -17,7 +17,7 @@ export default function Blog() {
           <ul className="mt-6 space-y-8">
             {posts.map((post) => (
               <li key={post.slug}>
-                <Link href={`/blog/${post.slug}`} className="group block">
+                <Link to={`/blog/${post.slug}`} className="group block">
                   <h2 className="text-xl font-semibold group-hover:text-mat-link">
                     {post.title}
                   </h2>
@@ -34,5 +34,5 @@ export default function Blog() {
         )}
       </div>
     </main>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from 'react-router-dom'
 
 export default function NotFound() {
   return (
@@ -9,11 +9,11 @@ export default function NotFound() {
         The requested page could not be found.
       </p>
       <Link
-        href="/"
+        to="/"
         className="mt-8 rounded-md bg-mat-accent px-4 py-2 text-sm font-semibold text-white hover:opacity-80"
       >
         Go Home
       </Link>
     </main>
-  );
+  )
 }

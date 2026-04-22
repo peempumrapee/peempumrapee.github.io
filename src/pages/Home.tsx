@@ -1,17 +1,17 @@
-import fs from "fs";
-import path from "path";
-import Link from "next/link";
-import { getAllPosts } from "@/lib/posts";
-import { markdownToHtml } from "@/lib/markdown";
+import { Link } from 'react-router-dom'
+import { getAllPosts } from '@/lib/posts'
+import { markdownToHtml } from '@/lib/markdown'
 
-export default async function Home() {
-  const latestPosts = getAllPosts().slice(0, 5);
-  const aboutMd = fs.readFileSync(
-    path.join(process.cwd(), "content/about.md"),
-    "utf8"
-  );
-  const aboutHtml = await markdownToHtml(aboutMd);
+const aboutFiles = import.meta.glob('/content/about.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+}) as Record<string, string>
 
+const aboutHtml = markdownToHtml(aboutFiles['/content/about.md'] ?? '')
+const latestPosts = getAllPosts().slice(0, 5)
+
+export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
       <div className="max-w-2xl w-full space-y-16 py-16">
@@ -103,7 +103,7 @@ export default async function Home() {
               <ul className="mt-6 space-y-6">
                 {latestPosts.map((post) => (
                   <li key={post.slug}>
-                    <Link href={`/blog/${post.slug}`} className="group block">
+                    <Link to={`/blog/${post.slug}`} className="group block">
                       <h3 className="text-lg font-semibold group-hover:text-mat-link">
                         {post.title}
                       </h3>
@@ -118,7 +118,7 @@ export default async function Home() {
                 ))}
               </ul>
               <Link
-                href="/blog"
+                to="/blog"
                 className="mt-6 inline-block text-sm font-semibold text-mat-link hover:underline"
               >
                 View all posts &rarr;
@@ -128,5 +128,5 @@ export default async function Home() {
         </section>
       </div>
     </main>
-  );
+  )
 }

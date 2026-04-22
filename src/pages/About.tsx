@@ -1,10 +1,10 @@
-import Link from "next/link";
+import { Link } from 'react-router-dom'
 
 export default function About() {
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
       <div className="max-w-2xl w-full">
-        <Link href="/" className="text-sm text-mat-text-muted hover:text-mat-text-secondary">
+        <Link to="/" className="text-sm text-mat-text-muted hover:text-mat-text-secondary">
           &larr; Home
         </Link>
         <h1 className="mt-4 text-3xl font-bold">About</h1>
@@ -48,5 +48,5 @@ export default function About() {
         </div>
       </div>
     </main>
-  );
+  )
 }
