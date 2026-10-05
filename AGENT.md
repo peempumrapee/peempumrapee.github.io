@@ -6,6 +6,11 @@ This repository is Pumrapee Poomka's personal website and blog. It is a static R
 
 Keep changes small and focused on the requested task. Preserve personal content unless asked to change it. Avoid new dependencies unless necessary and approved.
 
+## Branching strategy
+
+- Use `feat/<branch>` for any update related to the web codebase.
+- Use `blog/<branch>` for any update to Markdown blog content in `content/posts/`.
+
 ## Stack and commands
 
 - React 19, React Router 7, TypeScript in strict mode, Vite 6, and Tailwind CSS 4.

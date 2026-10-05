@@ -11,6 +11,11 @@ make setup
 make dev
 ```
 
+## Branching strategy
+
+- Use `feat/<branch>` for any update related to the web codebase.
+- Use `blog/<branch>` for any update to Markdown blog content in `content/posts/`.
+
 ## Commands
 
 Use [Makefile](Makefile) as the source of truth for project commands. Its targets wrap pnpm:
