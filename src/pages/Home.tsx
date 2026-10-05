@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { getAllPosts } from '@/lib/posts'
 import { markdownToHtml } from '@/lib/markdown'
+import profilePhoto from '@/assets/profile.jpg'
 
 const aboutFiles = import.meta.glob('/content/about.md', {
   query: '?raw',
@@ -21,7 +22,7 @@ export default function Home() {
             Peem Pumrapee Poomka
           </h1>
           <p className="mt-6 text-lg text-mat-text-secondary">
-            Software Engineer, Data & Machine Learning Engineering
+            Software, Data, Machine Learning, AI, Cloud Engineering
           </p>
           <div className="mt-4 flex justify-center gap-4">
             <a
@@ -70,18 +71,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Photo Placeholder */}
-        <div className="flex flex-col items-center">
-          <div className="flex h-40 w-40 items-center justify-center rounded-full bg-mat-surface">
-            <svg
-              className="h-16 w-16 text-mat-text-faint"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12Zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8Z" />
-            </svg>
-          </div>
-          <p className="mt-3 text-sm text-mat-text-faint">Add your photo</p>
+        {/* Profile Photo */}
+        <div className="flex justify-center">
+          <img
+            src={profilePhoto}
+            alt="Pumrapee Poomka"
+            width={288}
+            height={384}
+            className="h-auto w-72 max-w-full rounded-xl object-contain"
+          />
         </div>
 
         {/* About Me */}

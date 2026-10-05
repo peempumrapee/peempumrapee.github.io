@@ -10,7 +10,7 @@ export default function Blog() {
         <Link to="/" className="text-sm text-mat-text-muted hover:text-mat-text-secondary">
           &larr; Home
         </Link>
-        <h1 className="mt-4 text-3xl font-bold">Blog</h1>
+        <h1 className="mt-4 text-3xl font-bold">Blogs</h1>
         {posts.length === 0 ? (
           <p className="mt-6 text-mat-text-secondary">No posts yet.</p>
         ) : (
