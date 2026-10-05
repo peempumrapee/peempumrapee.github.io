@@ -1,2 +1,1 @@
-Write a short introduction about yourself here — your background,
-interests, and what you do.
+My experience includes delivering enterprise GenAI solutions, leading cross-functional teams in building AI-powered document-processing platforms, and developing cloud data platforms for clients across Southeast Asia.
