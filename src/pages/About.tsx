@@ -1,16 +1,31 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { markdownToHtml } from '@/lib/markdown'
+
+const aboutFiles = import.meta.glob('/content/about.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+}) as Record<string, string>
+
+const aboutHtml = markdownToHtml(aboutFiles['/content/about.md'] ?? '')
 
 export default function About() {
+  useEffect(() => {
+    document.title = 'About Me | Peem\'s Blog'
+    return () => { document.title = 'Peem\'s Blog' }
+  }, [])
+
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
-      <div className="max-w-2xl w-full">
-        <Link to="/" className="text-sm text-mat-text-muted hover:text-mat-text-secondary">
-          &larr; Home
-        </Link>
-        <h1 className="mt-4 text-3xl font-bold">About</h1>
-        <p className="mt-6 text-mat-text-secondary">
-          Hi, I&apos;m Pumrapee Poomka. Welcome to my personal website.
+      <div className="max-w-2xl w-full py-8">
+        <h1 className="text-3xl font-bold">About Me</h1>
+        <p className="mt-4 text-mat-text-secondary">
+          Hi, I&apos;m Pumrapee Poomka.
         </p>
+        <div
+          className="prose mt-6 max-w-none"
+          dangerouslySetInnerHTML={{ __html: aboutHtml }}
+        />
         <div className="mt-8">
           <h2 className="text-xl font-semibold">Links</h2>
           <ul className="mt-4 space-y-2">

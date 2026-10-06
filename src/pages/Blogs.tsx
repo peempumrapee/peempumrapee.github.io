@@ -7,17 +7,14 @@ export default function Blog() {
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
       <div className="max-w-2xl w-full">
-        <Link to="/" className="text-sm text-mat-text-muted hover:text-mat-text-secondary">
-          &larr; Home
-        </Link>
-        <h1 className="mt-4 text-3xl font-bold">Blogs</h1>
+        <h1 className="text-3xl font-bold">Blogs</h1>
         {posts.length === 0 ? (
           <p className="mt-6 text-mat-text-secondary">No posts yet.</p>
         ) : (
           <ul className="mt-6 space-y-8">
             {posts.map((post) => (
               <li key={post.slug}>
-                <Link to={`/blog/${post.slug}`} className="group block">
+                <Link to={`/blogs/${post.slug}`} className="group block">
                   <h2 className="text-xl font-semibold group-hover:text-mat-link">
                     {post.title}
                   </h2>

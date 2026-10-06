@@ -10,7 +10,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="flex items-center gap-6 text-sm font-semibold">
               {[
                 { to: '/', label: 'Home' },
-                { to: '/blog', label: 'Blogs' },
+                { to: '/blogs', label: 'Blogs' },
+                { to: '/about', label: 'About Me' },
               ].map(({ to, label }) => (
                 <NavLink
                   key={to}
