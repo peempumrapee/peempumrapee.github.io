@@ -9,8 +9,8 @@ export default function BlogPost() {
 
   useEffect(() => {
     if (post) {
-      document.title = `${post.title} | Pumrapee Poomka`
-      return () => { document.title = 'Peem Pumrapee Poomka' }
+      document.title = `${post.title} | Peem's Blog`
+      return () => { document.title = 'Peem\'s Blog' }
     }
   }, [post])
 

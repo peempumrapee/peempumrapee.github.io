@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { markdownToHtml } from '@/lib/markdown'
 
 const aboutFiles = import.meta.glob('/content/about.md', {
@@ -9,6 +10,11 @@ const aboutFiles = import.meta.glob('/content/about.md', {
 const aboutHtml = markdownToHtml(aboutFiles['/content/about.md'] ?? '')
 
 export default function About() {
+  useEffect(() => {
+    document.title = 'About Me | Peem\'s Blog'
+    return () => { document.title = 'Peem\'s Blog' }
+  }, [])
+
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
       <div className="max-w-2xl w-full py-8">
