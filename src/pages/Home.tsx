@@ -1,15 +1,7 @@
 import { Link } from 'react-router-dom'
 import { getAllPosts } from '@/lib/posts'
-import { markdownToHtml } from '@/lib/markdown'
 import profilePhoto from '@/assets/profile.jpg'
 
-const aboutFiles = import.meta.glob('/content/about.md', {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-}) as Record<string, string>
-
-const aboutHtml = markdownToHtml(aboutFiles['/content/about.md'] ?? '')
 const latestPosts = getAllPosts().slice(0, 5)
 
 export default function Home() {
@@ -19,7 +11,7 @@ export default function Home() {
         {/* Hero */}
         <section className="text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl whitespace-nowrap">
-            Peem Pumrapee Poomka
+            Peem's Blogs 
           </h1>
           <p className="mt-6 text-lg text-mat-text-secondary">
             Software, Data, Machine Learning, AI, Cloud Engineering
@@ -82,15 +74,6 @@ export default function Home() {
           />
         </div>
 
-        {/* About Me */}
-        <section>
-          <h2 className="text-2xl font-bold">About Me</h2>
-          <div
-            className="prose mt-4 max-w-none"
-            dangerouslySetInnerHTML={{ __html: aboutHtml }}
-          />
-        </section>
-
         {/* Latest Posts */}
         <section>
           <h2 className="text-2xl font-bold">Latest Posts</h2>
@@ -101,7 +84,7 @@ export default function Home() {
               <ul className="mt-6 space-y-6">
                 {latestPosts.map((post) => (
                   <li key={post.slug}>
-                    <Link to={`/blog/${post.slug}`} className="group block">
+                    <Link to={`/blogs/${post.slug}`} className="group block">
                       <h3 className="text-lg font-semibold group-hover:text-mat-link">
                         {post.title}
                       </h3>
@@ -116,7 +99,7 @@ export default function Home() {
                 ))}
               </ul>
               <Link
-                to="/blog"
+                to="/blogs"
                 className="mt-6 inline-block text-sm font-semibold text-mat-link hover:underline"
               >
                 View all posts &rarr;
